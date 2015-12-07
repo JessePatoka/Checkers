@@ -29,10 +29,10 @@ public class DragHandler : MonoBehaviour
     void OnMouseUp()
     {
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        var xPos = (int)Math.Floor(mousePosition.x);
-        Debug.Log("mousePosition.x" + mousePosition.x.ToString());
-        var yPos = (int)Math.Floor(mousePosition.y);
-        Debug.Log("mousePosition.y" + mousePosition.y.ToString());
+        var xPos = (int)Math.Round(mousePosition.x);
+        Debug.Log("mousePosition.x" + mousePosition.x.ToString() + " rounded: " + xPos.ToString());
+        var yPos = (int)Math.Round(mousePosition.y);
+        Debug.Log("mousePosition.y" + mousePosition.y.ToString() + " rounded: " + yPos.ToString());
         if (_gm.ProcessDrop(xPos, yPos))
         {
             transform.position = new Vector3(xPos, yPos);
